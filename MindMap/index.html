@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Map</title>
+
+<link rel="stylesheet" href="style.css" />  
+    
+</head>
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+    <div class="test_description">
+
+        <form action="/action_page.php">
+            <label for="actore">Actor</label><br>
+            <input type="text" id="actor" name="actor"><br>
+            <label for="state">State:</label><br>
+            <input type="text" id="state" name="state"><br>
+            <label for="action">Action:</label><br>
+            <input type="text" id="action" name="action" value=""><br><br>
+            <input type="submit" value="Submit">
+          </form> 
+
+    </div>
+   
+    <div class="mermaid">
+        flowchart TD
+            n1((Start)) --> n2{if hcp recieved messagge?}
+            n2 -->|Yes| C[New Message]
+            C -->|Pick up| D[New message in handled list]
+            D --> |Reassign back to reception| C
+            id1 ---->|No| E[End]
+    </div>
+
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+</body>
+</html>
